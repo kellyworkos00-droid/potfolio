@@ -81,7 +81,16 @@ export default function ServicesPage() {
             </p>
           </div>
           <div className="services-glass-canvas" aria-hidden="true">
-            <FluidGlass mode="lens" lensProps={{ ior: 1.12, thickness: 4.5, chromaticAberration: 0.07 }} />
+            <FluidGlass
+              mode="lens"
+              lensProps={{
+                scale: 1.28,
+                ior: 1.12,
+                thickness: 5.4,
+                chromaticAberration: 0.09,
+                anisotropy: 0.08,
+              }}
+            />
           </div>
         </section>
       </ScrollAnimationWrapper>

@@ -90,7 +90,7 @@ const ModeWrapper = memo(function ModeWrapper({
 
     const configuredScale = (modeProps.scale as number | undefined) ?? null;
     if (configuredScale == null) {
-      ref.current.scale.setScalar(Math.min(0.18, v.width * 0.08));
+      ref.current.scale.setScalar(Math.min(1.45, Math.max(0.9, v.width * 0.12)));
     }
 
     gl.setRenderTarget(buffer);
@@ -123,6 +123,7 @@ const ModeWrapper = memo(function ModeWrapper({
           thickness={thickness ?? 4.2}
           anisotropy={anisotropy ?? 0.02}
           chromaticAberration={chromaticAberration ?? 0.08}
+          samples={8}
           distortion={0.15}
           distortionScale={0.5}
           temporalDistortion={0.1}
