@@ -1053,7 +1053,7 @@ a {
 
 .section-head {
   display: flex;
-  align-items: end;
+  margin-top: 0.4rem;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1.5rem;
@@ -2091,8 +2091,9 @@ html:not([data-theme]) .case-study-stack-card {
   }
 
   .top-nav {
-    top: 0.65rem;
+    top: 0;
     padding: 0.75rem 0.85rem;
+    margin-top: 0.35rem;
   }
 
   .case-study-stack-intro h2 {
