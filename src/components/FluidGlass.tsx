@@ -22,12 +22,12 @@ type FluidGlassProps = {
   cubeProps?: ModeProps;
 };
 
-type ModeWrapperProps = ThreeElements["mesh"] & {
+type ModeWrapperProps = Omit<ThreeElements["mesh"], "geometry"> & {
   children?: ReactNode;
   lockToBottom?: boolean;
   followPointer?: boolean;
   modeProps?: ModeProps;
-  geometry: ReactNode;
+  geometryEl: ReactNode | THREE.BufferGeometry;
 };
 
 type ZoomMaterial = THREE.Material & { zoom?: number };
@@ -69,7 +69,7 @@ const ModeWrapper = memo(function ModeWrapper({
   lockToBottom = false,
   followPointer = true,
   modeProps = {},
-  geometry,
+  geometryEl,
   ...props
 }: ModeWrapperProps) {
   const ref = useRef<THREE.Mesh>(null);
@@ -116,7 +116,7 @@ const ModeWrapper = memo(function ModeWrapper({
         <meshBasicMaterial map={buffer.texture} transparent />
       </mesh>
       <mesh ref={ref} scale={scale ?? 0.18} rotation-x={Math.PI / 2} {...props}>
-        {geometry}
+        {geometryEl as ReactNode}
         <MeshTransmissionMaterial
           buffer={buffer.texture}
           ior={ior ?? 1.12}
@@ -134,11 +134,11 @@ const ModeWrapper = memo(function ModeWrapper({
 });
 
 function Lens({ modeProps, ...props }: { modeProps?: ModeProps } & ThreeElements["mesh"]) {
-  return <ModeWrapper geometry={<cylinderGeometry args={[1.2, 1.2, 0.42, 72]} />} followPointer modeProps={modeProps} {...props} />;
+  return <ModeWrapper geometryEl={<cylinderGeometry args={[1.2, 1.2, 0.42, 72]} />} followPointer modeProps={modeProps} {...props} />;
 }
 
 function Cube({ modeProps, ...props }: { modeProps?: ModeProps } & ThreeElements["mesh"]) {
-  return <ModeWrapper geometry={<boxGeometry args={[1.6, 1.6, 1.6]} />} followPointer modeProps={modeProps} {...props} />;
+  return <ModeWrapper geometryEl={<boxGeometry args={[1.6, 1.6, 1.6]} />} followPointer modeProps={modeProps} {...props} />;
 }
 
 function Bar({ modeProps = {}, ...props }: { modeProps?: ModeProps } & ThreeElements["mesh"]) {
@@ -154,7 +154,7 @@ function Bar({ modeProps = {}, ...props }: { modeProps?: ModeProps } & ThreeElem
 
   return (
     <ModeWrapper
-      geometry={<boxGeometry args={[3.8, 0.6, 0.6]} />}
+      geometryEl={<boxGeometry args={[3.8, 0.6, 0.6]} />}
       lockToBottom
       followPointer={false}
       modeProps={{ ...defaults, ...modeProps }}
@@ -256,11 +256,13 @@ function Images() {
 
   return (
     <group ref={group}>
-      <Image position={[-2, 0, 0]} scale={[3, height / 1.1]} url="/images/etana-home.png" alt="Etana project preview" />
-      <Image position={[2, 0, 3]} scale={3} url="/images/eterna-home.png" alt="Eterna project preview" />
-      <Image position={[-2.05, -height, 6]} scale={[1, 3]} url="/images/sali-home.png" alt="Sali project preview" />
-      <Image position={[-0.6, -height, 9]} scale={[1, 2]} url="/images/etana-home.png" alt="Etana close-up" />
-      <Image position={[0.75, -height, 10.5]} scale={1.5} url="/images/eterna-home.png" alt="Eterna close-up" />
+      {/* eslint-disable jsx-a11y/alt-text */}
+      <Image position={[-2, 0, 0]} scale={[3, height / 1.1]} url="/images/etana-home.png" />
+      <Image position={[2, 0, 3]} scale={3} url="/images/eterna-home.png" />
+      <Image position={[-2.05, -height, 6]} scale={[1, 3]} url="/images/sali-home.png" />
+      <Image position={[-0.6, -height, 9]} scale={[1, 2]} url="/images/etana-home.png" />
+      <Image position={[0.75, -height, 10.5]} scale={1.5} url="/images/eterna-home.png" />
+      {/* eslint-enable jsx-a11y/alt-text */}
     </group>
   );
 }
