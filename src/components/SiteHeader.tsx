@@ -54,6 +54,16 @@ const navItems = [
     ),
   },
   {
+    href: "/blog",
+    label: "Blog",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M8 10h8M8 14h8M8 18h4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     href: "/contact",
     label: "Contact",
     icon: (
