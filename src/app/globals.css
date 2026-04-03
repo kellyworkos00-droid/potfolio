@@ -1299,6 +1299,189 @@ html:not([data-theme]) .stack-card {
   }
 }
 
+/* ─── Sticky Project Cards ───────────────────────────────── */
+.spj-section {
+  margin-top: 6rem;
+}
+
+.spj-intro {
+  padding-bottom: 3.5rem;
+  max-width: 64ch;
+}
+
+.spj-intro h2 {
+  margin-top: 0.5rem;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.08;
+}
+
+.spj-intro-sub {
+  margin-top: 0.6rem;
+  opacity: 0.55;
+  font-size: 0.95rem;
+}
+
+/* Each pin = 100vh card + 80vh buffer before next card enters */
+.spj-pin {
+  height: 180vh;
+}
+
+.spj-card {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: var(--spj-z, 1);
+  background: linear-gradient(160deg, var(--spj-dark-bg, #0d0d0d), #0a0a0a);
+  display: flex;
+  align-items: center;
+  transform-origin: 50% 0%;
+  will-change: transform, filter;
+  overflow: hidden;
+  transition: border-radius 0.15s ease;
+}
+
+/* Accent stripe along the top edge */
+.spj-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--spj-accent, var(--accent));
+  opacity: 0.7;
+}
+
+.spj-card-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.spj-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.spj-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.spj-num {
+  font-family: var(--font-playfair), serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--spj-accent, var(--accent));
+  opacity: 0.2;
+  user-select: none;
+}
+
+.spj-cat {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--spj-accent, var(--accent));
+}
+
+.spj-title {
+  margin: 0;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.spj-desc {
+  margin: 0;
+  line-height: 1.72;
+  opacity: 0.78;
+  max-width: 48ch;
+}
+
+.spj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.spj-tags span {
+  padding: 0.32rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  background: #ffffff09;
+  color: var(--spj-accent, var(--accent));
+}
+
+.spj-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  background: var(--spj-accent, var(--accent));
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  width: fit-content;
+  box-shadow: 0 8px 28px #00000040;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.spj-cta:hover {
+  transform: translateY(-3px);
+  opacity: 0.88;
+  box-shadow: 0 14px 36px #00000055;
+}
+
+.spj-card-right {
+  position: relative;
+}
+
+.spj-img-frame {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  aspect-ratio: 16 / 10;
+  background: #111;
+  box-shadow:
+    0 40px 80px #00000055,
+    0 0 0 1px #ffffff08;
+}
+
+.spj-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 7s ease;
+}
+
+.spj-img-frame:hover img {
+  transform: scale(1.05) translateY(-2%);
+}
+
+/* Light mode */
+html:not([data-theme]) .spj-card {
+  background: linear-gradient(160deg, #f7f2eb, #ffffff);
+}
+
+html:not([data-theme]) .spj-tags span {
+  background: #00000008;
+}
+
 /* ─── Tech Logos ─────────────────────────────────────────── */
 .tech-logos-section {
   margin-top: 4.5rem;
@@ -1516,6 +1699,32 @@ html:not([data-theme]) .stack-card {
   .portrait-accent {
     transform: none;
   }
+
+  /* Sticky project cards */
+  .spj-pin {
+    height: 200vh;
+  }
+
+  .spj-card-inner {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding-top: 5.5rem;
+    padding-bottom: 2rem;
+    align-content: start;
+  }
+
+  .spj-card {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .spj-num {
+    font-size: 3rem;
+  }
+
+  .spj-img-frame {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1525,6 +1734,19 @@ html:not([data-theme]) .stack-card {
 
   .top-nav {
     padding-top: 0.8rem;
+  }
+
+  /* Sticky project cards small */
+  .spj-intro h2 {
+    font-size: clamp(1.7rem, 7vw, 2.5rem);
+  }
+
+  .spj-title {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+  }
+
+  .spj-img-frame {
+    aspect-ratio: 4 / 3;
   }
 
   .nav-actions {

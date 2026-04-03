@@ -4,28 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { ScrollDepthScene } from "@/components/ScrollDepthScene";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { TechLogos } from "@/components/TechLogos";
-import { StackedCards } from "@/components/StackedCards";
-
-const projects = [
-  {
-    title: "Etana E-Commerce Platform",
-    type: "Wholesale Commerce + UX Systems",
-    result: "Bulk-buying experience with conversion-first merchandising and nationwide logistics messaging",
-    href: "https://etana-must.vercel.app/",
-  },
-  {
-    title: "Sali Products Kenya",
-    type: "E-Commerce + Inventory Platform",
-    result: "Industrial tools & machinery store with category-led navigation, product search, and KES pricing",
-    href: "https://sali-lygt.vercel.app/",
-  },
-  {
-    title: "Eterna Interiors Hub",
-    type: "Luxury Brand Website",
-    result: "High-end interior design studio site with portfolio showcase, testimonials, and consultation booking",
-    href: "https://eternakelly.vercel.app/",
-  },
-];
+import { StickyProjectCards } from "@/components/StickyProjectCards";
 
 const mobileHighlights = [
   "Thumb-friendly navigation and CTAs",
@@ -39,27 +18,6 @@ const etanaStats = [
   "Same-day delivery in Nairobi",
   "500+ businesses served",
   "8 live products showcased with wholesale pricing",
-];
-
-const saliStats = [
-  "5,000+ products across tools, machines & supplies",
-  "10+ years in business",
-  "1,000+ satisfied clients across Kenya",
-  "Wishlist, cart, and account system built in",
-];
-
-const eternaStats = [
-  "500+ projects completed",
-  "15+ years design experience",
-  "98% client satisfaction rate",
-  "Full newsletter, portfolio & booking system",
-];
-
-const storyPoints = [
-  "Kenya-based full-stack developer working from Ruiru Kamakis",
-  "Focused on premium business websites, e-commerce platforms, and custom web systems",
-  "Blends visual design thinking with backend engineering and deployment discipline",
-  "Builds for speed, clarity, conversion, and long-term business growth",
 ];
 
 const services = [
@@ -150,6 +108,27 @@ const testimonials = [
     author: "Brand Client",
     role: "Marketing Lead",
   },
+];
+
+const saliStats = [
+  "5,000+ products across tools, machines & supplies",
+  "10+ years in business",
+  "1,000+ satisfied clients across Kenya",
+  "Wishlist, cart, and account system built in",
+];
+
+const eternaStats = [
+  "500+ projects completed",
+  "15+ years design experience",
+  "98% client satisfaction rate",
+  "Full newsletter, portfolio & booking system",
+];
+
+const storyPoints = [
+  "Kenya-based full-stack developer working from Ruiru Kamakis",
+  "Focused on premium business websites, e-commerce platforms, and custom web systems",
+  "Blends visual design thinking with backend engineering and deployment discipline",
+  "Builds for speed, clarity, conversion, and long-term business growth",
 ];
 
 const trustStats = [
@@ -375,9 +354,7 @@ export default function Home() {
           </section>
         </ScrollAnimationWrapper>
 
-        <StackedCards />
-
-        <ScrollAnimationWrapper>
+            <ScrollAnimationWrapper>
           <section className="crawl-wrap" aria-label="Highlights">
             <div className="crawl-track">
               <span>AWARD-WORTHY DESIGN</span>
@@ -397,21 +374,7 @@ export default function Home() {
           </section>
         </ScrollAnimationWrapper>
 
-        <ScrollAnimationWrapper>
-          <section className="work wrapper" id="work">
-            <h2>Featured Projects</h2>
-            <div className="project-grid">
-              {projects.map((project) => (
-                <a key={project.title} className="project-card" href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel={project.href.startsWith("http") ? "noopener noreferrer" : undefined}>
-                  <p>{project.type}</p>
-                  <h3>{project.title}</h3>
-                  <strong>{project.result}</strong>
-                  <span className="project-link">View project</span>
-                </a>
-              ))}
-            </div>
-          </section>
-        </ScrollAnimationWrapper>
+        <StickyProjectCards />
 
         <ScrollAnimationWrapper>
           <section className="case-study wrapper" aria-labelledby="etana-case-study">
