@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
 import { ContactForm } from "@/components/ContactForm";
+import { ScrollDepthScene } from "@/components/ScrollDepthScene";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const projects = [
@@ -45,12 +46,34 @@ const services = [
   "Conversion optimization strategy",
   "Responsive & accessible interfaces",
   "SEO-optimized architecture",
+  "Backend systems, APIs, auth, and database design",
+  "Deployment, scaling, analytics, and maintenance",
+];
+
+const stackAreas = [
+  {
+    title: "Frontend Systems",
+    detail: "Next.js, React, animation systems, responsive design, e-commerce storefronts, dashboards, and premium landing pages.",
+  },
+  {
+    title: "Backend Engineering",
+    detail: "Node.js APIs, authentication, admin panels, order flows, role-based access, and secure business logic.",
+  },
+  {
+    title: "Data & Integrations",
+    detail: "Databases, CMS setups, analytics, payment gateways, WhatsApp workflows, email flows, and third-party integrations.",
+  },
+  {
+    title: "Deployment & Growth",
+    detail: "Vercel deployment, performance tuning, SEO, monitoring, scaling strategy, and long-term product improvement.",
+  },
 ];
 
 export default function Home() {
   return (
     <div className="page-shell">
       <div className="ambient-bg" aria-hidden="true" />
+      <ScrollDepthScene />
 
       <header className="top-nav wrapper">
         <p className="brand-mark">ZACHARY NDEGWA</p>
@@ -64,12 +87,12 @@ export default function Home() {
 
       <main>
         <section className="hero wrapper">
-          <p className="kicker">🇰🇪 Kenya • Ruiru Kamakis • Next.js Developer</p>
+          <p className="kicker">🇰🇪 Kenya • Ruiru Kamakis • Full-Stack Developer</p>
           <h1>
-            I design and build bold digital experiences that win awards and drive real results.
+            I design and engineer premium full-stack digital experiences that feel world-class and perform like serious products.
           </h1>
           <p className="lead">
-            I&apos;m Zachary Ndegwa, a web developer and designer crafting top-tier websites for ambitious brands across Kenya and beyond. Every project is built for performance, beauty, and impact.
+            I&apos;m Zachary Ndegwa, a full-stack developer and designer building top-tier websites, e-commerce platforms, product interfaces, and backend systems for ambitious brands across Kenya and beyond. Every project is built for performance, clarity, beauty, and business impact.
           </p>
 
           <div className="hero-ctas">
@@ -92,7 +115,7 @@ export default function Home() {
             </div>
             <div>
               <span>03</span>
-              <p>Motion, SEO, performance, and deployment handled end-to-end</p>
+              <p>Frontend, backend, database, deployment, SEO, and motion handled end-to-end</p>
             </div>
           </div>
 
@@ -103,11 +126,11 @@ export default function Home() {
             </article>
             <article>
               <p>Engineering</p>
-              <strong>Fast, scalable Next.js</strong>
+              <strong>Fast, scalable full-stack systems</strong>
             </article>
             <article>
               <p>Business Impact</p>
-              <strong>Design that converts</strong>
+              <strong>Products built to convert and scale</strong>
             </article>
           </div>
         </section>
@@ -130,13 +153,34 @@ export default function Home() {
           <div className="about-copy">
             <h2>Crafted to win. Built to convert.</h2>
             <p>
-              I combine strategic design thinking with latest web technologies. Every pixel is intentional. Every interaction serves a purpose. The result: websites that don&apos;t just look premium—they perform.
+              I combine strategic design thinking with modern full-stack engineering. Every pixel is intentional, every interaction serves a purpose, and every system behind the UI is built to support speed, reliability, and growth.
             </p>
             <p>
-              From concept to launch, I handle everything: UX/UI design, front-end development, performance optimization, and deployment. Based in Ruiru Kamakis, Kenya, I work with ambitious brands across the globe.
+              From concept to launch, I handle UX/UI design, front-end architecture, API workflows, backend features, database planning, performance optimization, SEO, and deployment. Based in Ruiru Kamakis, Kenya, I work with ambitious brands across the globe.
             </p>
           </div>
         </section>
+
+        <ScrollAnimationWrapper>
+          <section className="fullstack wrapper" aria-labelledby="fullstack-title">
+            <div className="fullstack-heading">
+              <p className="eyebrow">Full-Stack Capability</p>
+              <h2 id="fullstack-title">More than design. I build the product behind the experience.</h2>
+              <p>
+                Premium UI means nothing if the product underneath is weak. I build beautiful interfaces backed by real engineering: admin tools, APIs, authentication, data models, checkout flows, CMS structures, and deployment pipelines that support real business growth.
+              </p>
+            </div>
+
+            <div className="stack-grid">
+              {stackAreas.map((area) => (
+                <article key={area.title} className="stack-card">
+                  <h3>{area.title}</h3>
+                  <p>{area.detail}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        </ScrollAnimationWrapper>
 
         <ScrollAnimationWrapper>
           <section className="crawl-wrap" aria-label="Highlights">
@@ -145,7 +189,7 @@ export default function Home() {
               <span>•</span>
               <span>3D MOTION</span>
               <span>•</span>
-              <span>NEXT.JS PERFORMANCE</span>
+              <span>FULL-STACK ENGINEERING</span>
               <span>•</span>
               <span>KENYA-BASED</span>
               <span>•</span>
@@ -153,7 +197,7 @@ export default function Home() {
               <span>•</span>
               <span>3D MOTION</span>
               <span>•</span>
-              <span>NEXT.JS PERFORMANCE</span>
+              <span>FULL-STACK ENGINEERING</span>
             </div>
           </section>
         </ScrollAnimationWrapper>
