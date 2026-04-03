@@ -144,10 +144,68 @@ const trustStats = [
 ];
 
 export default function Home() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-zachary.vercel.app";
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Zachary Ndegwa",
+    jobTitle: "Full-Stack Developer",
+    description:
+      "Full-stack developer in Kenya specializing in premium websites, e-commerce systems, and scalable web applications.",
+    url: siteUrl,
+    image: `${siteUrl}/images/zach.jpeg`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Ruiru Kamakis",
+      addressCountry: "KE",
+    },
+    telephone: "+254798293831",
+    knowsAbout: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "API Development",
+      "E-commerce Development",
+      "UI/UX Design",
+      "Web Performance",
+    ],
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Zachary Ndegwa Full-Stack Development Services",
+    url: siteUrl,
+    telephone: "+254798293831",
+    areaServed: "Kenya",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Ruiru Kamakis",
+      addressCountry: "KE",
+    },
+    serviceType: [
+      "Full-Stack Web Development",
+      "E-commerce Development",
+      "Website Design and Development",
+      "Next.js Development",
+      "Backend API Development",
+    ],
+  };
+
   return (
     <div className="page-shell">
       <div className="ambient-bg" aria-hidden="true" />
       <ScrollDepthScene />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
 
       <header className="top-nav wrapper">
         <p className="brand-mark">ZACHARY NDEGWA</p>
