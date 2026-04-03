@@ -15,9 +15,17 @@ const bodyFont = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Zachary Ndegwa | Next.js Developer & Designer",
+  title: "Zachary Ndegwa | Award-Winning Web Designer & Developer in Kenya",
   description:
-    "Award-level portfolio experience for Zachary Ndegwa, a web developer and designer based in Ruiru Kamakis, Kenya.",
+    "Award-level portfolio website for Zachary Ndegwa, a web developer and designer based in Ruiru Kamakis, Kenya. Specializing in Next.js, 3D interactions, and high-performance design.",
+  keywords: "web design, web development, Next.js, kenya, portfolio, UI UX",
+  authors: [{ name: "Zachary Ndegwa" }],
+  openGraph: {
+    title: "Zachary Ndegwa | Web Designer & Developer",
+    description: "Award-winning web design and development services based in Kenya",
+    type: "website",
+    locale: "en_KE",
+  },
 };
 
 export default function RootLayout({
