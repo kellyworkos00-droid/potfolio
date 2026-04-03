@@ -14,25 +14,23 @@ const applyTheme = (dark: boolean) => {
 };
 
 export function ThemeToggle() {
-  const [isDark, setIsDark] = useState(true);
-  const [mounted, setMounted] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window === 'undefined') {
+      return true;
+    }
 
-  useEffect(() => {
-    setMounted(true);
     const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDarkMode = saved ? saved === 'dark' : prefersDark;
-    setIsDark(isDarkMode);
-    applyTheme(isDarkMode);
-  }, []);
+    return saved ? saved === 'dark' : prefersDark;
+  });
+
+  useEffect(() => {
+    applyTheme(isDark);
+  }, [isDark]);
 
   const toggleTheme = () => {
-    const newDark = !isDark;
-    setIsDark(newDark);
-    applyTheme(newDark);
+    setIsDark((current) => !current);
   };
-
-  if (!mounted) return null;
 
   return (
     <button

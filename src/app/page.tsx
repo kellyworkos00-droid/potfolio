@@ -5,20 +5,37 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 
 const projects = [
   {
-    title: "Premium Brand Websites",
-    type: "Design + Development",
-    result: "Top-tier conversions for luxury brands across East Africa",
+    title: "Etana E-Commerce Platform",
+    type: "Wholesale Commerce + UX Systems",
+    result: "Bulk-buying experience with conversion-first merchandising and nationwide logistics messaging",
+    href: "https://etana-must.vercel.app/",
   },
   {
-    title: "E-Commerce Platforms",
-    type: "Full Stack UX",
-    result: "Seamless shopping experiences with 3D product interactions",
+    title: "Premium Brand Websites",
+    type: "Design + Development",
+    result: "Luxury visual systems, rich motion, and performance-led front-end builds",
+    href: "#contact",
   },
   {
     title: "SaaS Dashboards",
     type: "Product Design + Animation",
-    result: "Enterprise solutions with micro-interactions and smooth flows",
+    result: "Enterprise-ready interfaces with smooth flows, data hierarchy, and polished interactions",
+    href: "#contact",
   },
+];
+
+const mobileHighlights = [
+  "Thumb-friendly navigation and CTAs",
+  "Responsive layouts tuned for Kenyan mobile traffic",
+  "Fast-loading media and lightweight animations",
+  "High-contrast UI for clarity in every environment",
+];
+
+const etanaStats = [
+  "50,000+ active shoppers",
+  "Same-day delivery in Nairobi",
+  "500+ businesses served",
+  "8 live products showcased with wholesale pricing",
 ];
 
 const services = [
@@ -62,6 +79,21 @@ export default function Home() {
             <a href="#about" className="btn-secondary">
               My Process
             </a>
+          </div>
+
+          <div className="hero-metrics">
+            <div>
+              <span>01</span>
+              <p>High-end websites for serious brands</p>
+            </div>
+            <div>
+              <span>02</span>
+              <p>Mobile-first UX tuned for real traffic</p>
+            </div>
+            <div>
+              <span>03</span>
+              <p>Motion, SEO, performance, and deployment handled end-to-end</p>
+            </div>
           </div>
 
           <div className="hero-grid-3d">
@@ -131,10 +163,78 @@ export default function Home() {
             <h2>Featured Projects</h2>
             <div className="project-grid">
               {projects.map((project) => (
-                <article key={project.title} className="project-card">
+                <a key={project.title} className="project-card" href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel={project.href.startsWith("http") ? "noopener noreferrer" : undefined}>
                   <p>{project.type}</p>
                   <h3>{project.title}</h3>
                   <strong>{project.result}</strong>
+                  <span className="project-link">View project</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        </ScrollAnimationWrapper>
+
+        <ScrollAnimationWrapper>
+          <section className="case-study wrapper" aria-labelledby="etana-case-study">
+            <div className="case-study-copy">
+              <p className="eyebrow">Live Work</p>
+              <h2 id="etana-case-study">Etana: e-commerce built for wholesale buyers.</h2>
+              <p>
+                Etana is a conversion-focused commerce platform built around trust, logistics clarity, and bulk procurement. The experience pushes strong category discovery, featured deals, product urgency, and clean checkout entry points for Kenyan buyers.
+              </p>
+              <div className="case-study-pills">
+                <span>Red + white commerce identity</span>
+                <span>Bulk order pricing UX</span>
+                <span>Mini-cart and fast checkout flow</span>
+                <span>Category-led navigation</span>
+              </div>
+              <ul className="case-study-stats">
+                {etanaStats.map((stat) => (
+                  <li key={stat}>{stat}</li>
+                ))}
+              </ul>
+              <div className="case-study-actions">
+                <a className="btn-primary" href="https://etana-must.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  Open Live Site
+                </a>
+                <a className="btn-secondary" href="#contact">
+                  Build My Store
+                </a>
+              </div>
+            </div>
+
+            <div className="case-study-visual">
+              <div className="case-study-screen">
+                <Image
+                  src="/images/zachary-project.svg"
+                  alt="Etana e-commerce project showcase frame"
+                  width={1200}
+                  height={760}
+                  sizes="(max-width: 980px) 100vw, 50vw"
+                />
+              </div>
+              <div className="case-study-float-card">
+                <p>Commerce Focus</p>
+                <strong>Designed to convert procurement traffic into repeat orders.</strong>
+              </div>
+            </div>
+          </section>
+        </ScrollAnimationWrapper>
+
+        <ScrollAnimationWrapper>
+          <section className="mobile-design wrapper" aria-labelledby="mobile-design-title">
+            <div className="mobile-design-heading">
+              <p className="eyebrow">Mobile First</p>
+              <h2 id="mobile-design-title">Better mobile design for the audience that matters most.</h2>
+              <p>
+                In Kenya, mobile is not the fallback. It is the main stage. I design layouts, buttons, forms, and product flows to feel premium on phones first, then scale upward cleanly.
+              </p>
+            </div>
+            <div className="mobile-cards">
+              {mobileHighlights.map((item, index) => (
+                <article key={item} className="mobile-card">
+                  <span>0{index + 1}</span>
+                  <h3>{item}</h3>
                 </article>
               ))}
             </div>
@@ -171,6 +271,14 @@ export default function Home() {
           </section>
         </ScrollAnimationWrapper>
       </main>
+
+      <div className="mobile-quick-bar">
+        <a href="tel:+254798293831">Call</a>
+        <a href="https://wa.me/254798293831?text=Hi%20Zachary,%20I%20want%20a%20website" target="_blank" rel="noopener noreferrer">
+          WhatsApp
+        </a>
+        <a href="#work">Work</a>
+      </div>
     </div>
   );
 }
