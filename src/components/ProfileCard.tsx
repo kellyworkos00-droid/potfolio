@@ -429,7 +429,7 @@ function ProfileCardComponent({
         hsla(0, 0%, 0%, 0.25) 120%
       )
     `.replace(/\s+/g, " "),
-    gridArea: "1 / -1",
+    gridArea: "1 / 1 / -1 / -1",
     borderRadius: cardRadius,
     pointerEvents: "none",
   };
@@ -445,7 +445,7 @@ function ProfileCardComponent({
     mixBlendMode: "overlay",
     filter: "brightness(0.85) contrast(1.15)",
     zIndex: 4,
-    gridArea: "1 / -1",
+    gridArea: "1 / 1 / -1 / -1",
     borderRadius: cardRadius,
     pointerEvents: "none",
   };
@@ -503,7 +503,8 @@ function ProfileCardComponent({
               backgroundColor: "rgba(0, 0, 0, 0.9)",
               borderRadius: cardRadius,
               display: "grid",
-              gridArea: "1 / -1",
+              gridTemplateColumns: "1fr",
+              gridTemplateRows: "1fr",
             }}
           >
             <div style={shineStyle} />
@@ -514,7 +515,7 @@ function ProfileCardComponent({
               style={{
                 mixBlendMode: "luminosity",
                 transform: "translateZ(2px)",
-                gridArea: "1 / -1",
+                gridArea: "1 / 1 / -1 / -1",
                 borderRadius: cardRadius,
                 pointerEvents: "none",
                 backfaceVisibility: "hidden",
@@ -588,7 +589,7 @@ function ProfileCardComponent({
                 transform:
                   "translate3d(calc(var(--pointer-from-left) * -6px + 3px), calc(var(--pointer-from-top) * -6px + 3px), 0.1px)",
                 mixBlendMode: "luminosity",
-                gridArea: "1 / -1",
+                gridArea: "1 / 1 / -1 / -1",
                 borderRadius: cardRadius,
                 pointerEvents: "none",
               }}
