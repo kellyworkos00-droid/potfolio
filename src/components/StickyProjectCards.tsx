@@ -54,31 +54,38 @@ export function StickyProjectCards() {
     );
 
     const update = () => {
-      const VH = window.innerHeight;
+      const viewportHeight = window.innerHeight;
+
       cards.forEach((card, i) => {
-        // The last card never needs to be scaled down
         if (i >= cards.length - 1) {
           card.style.transform = '';
           card.style.filter = '';
+          card.style.opacity = '';
           return;
         }
+
         const nextCard = cards[i + 1];
         const nextTop = nextCard.getBoundingClientRect().top;
 
-        // 0 = next card not yet visible;  1 = next card fully covering this card
-        const cover = 1 - Math.max(0, Math.min(1, nextTop / VH));
+        // 0 = next card not yet visible, 1 = next card has fully occupied the sticky zone.
+        const cover = 1 - Math.max(0, Math.min(1, nextTop / viewportHeight));
 
         if (cover > 0) {
-          const scale   = (1 - cover * 0.07).toFixed(4);
-          const bright  = (1 - cover * 0.35).toFixed(4);
-          const radius  = (cover * 20).toFixed(1);
-          card.style.transform    = `scale(${scale})`;
-          card.style.filter       = `brightness(${bright})`;
+          const scale = (1 - cover * 0.045).toFixed(4);
+          const offset = (cover * -18).toFixed(1);
+          const bright = (1 - cover * 0.14).toFixed(4);
+          const radius = (18 + cover * 10).toFixed(1);
+          const opacity = (1 - cover * 0.08).toFixed(4);
+
+          card.style.transform = `translateY(${offset}px) scale(${scale})`;
+          card.style.filter = `brightness(${bright})`;
           card.style.borderRadius = `${radius}px`;
+          card.style.opacity = opacity;
         } else {
-          card.style.transform    = '';
-          card.style.filter       = '';
+          card.style.transform = '';
+          card.style.filter = '';
           card.style.borderRadius = '';
+          card.style.opacity = '';
         }
       });
     };
@@ -112,8 +119,8 @@ export function StickyProjectCards() {
     >
       <div className="spj-intro wrapper">
         <p className="eyebrow">Featured Work</p>
-        <h2 id="spj-heading">Projects built for real impact.</h2>
-        <p className="spj-intro-sub">Scroll to explore each project.</p>
+        <h2 id="spj-heading">A cleaner stacked view of the work.</h2>
+        <p className="spj-intro-sub">Each project settles into place while the next one rises over it.</p>
       </div>
 
       {PROJECTS.map((p, i) => (
