@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import { ScrollDepthScene } from "@/components/ScrollDepthScene";
+import { MobileQuickBar } from "@/components/MobileQuickBar";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
@@ -94,11 +94,7 @@ export default function RootLayout({
           <SiteHeader />
           {children}
           <SiteFooter />
-          <div className="mobile-quick-bar">
-            <Link href="/">Home</Link>
-            <Link href="/projects">Work</Link>
-            <Link href="/contact">Contact</Link>
-          </div>
+          <MobileQuickBar />
         </div>
       </body>
     </html>
