@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Syne } from "next/font/google";
+import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const headingFont = Syne({
-  variable: "--font-syne",
+const headingFont = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const bodyFont = Space_Grotesk({
-  variable: "--font-space",
+const bodyFont = DM_Sans({
+  variable: "--font-dm",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
