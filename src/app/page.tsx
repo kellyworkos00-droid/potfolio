@@ -4,7 +4,6 @@ import { ContactForm } from "@/components/ContactForm";
 import { ScrollDepthScene } from "@/components/ScrollDepthScene";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { TechLogos } from "@/components/TechLogos";
-import { StickyProjectCards } from "@/components/StickyProjectCards";
 
 const mobileHighlights = [
   "Thumb-friendly navigation and CTAs",
@@ -374,148 +373,156 @@ export default function Home() {
           </section>
         </ScrollAnimationWrapper>
 
-        <StickyProjectCards />
-
         <ScrollAnimationWrapper>
-          <section className="case-study wrapper" aria-labelledby="etana-case-study">
-            <div className="case-study-copy">
-              <p className="eyebrow">Live Work</p>
-              <h2 id="etana-case-study">Etana: e-commerce built for wholesale buyers.</h2>
-              <p>
-                Etana is a conversion-focused commerce platform built around trust, logistics clarity, and bulk procurement. The experience pushes strong category discovery, featured deals, product urgency, and clean checkout entry points for Kenyan buyers.
-              </p>
-              <div className="case-study-pills">
-                <span>Red + white commerce identity</span>
-                <span>Bulk order pricing UX</span>
-                <span>Mini-cart and fast checkout flow</span>
-                <span>Category-led navigation</span>
-              </div>
-              <ul className="case-study-stats">
-                {etanaStats.map((stat) => (
-                  <li key={stat}>{stat}</li>
-                ))}
-              </ul>
-              <div className="case-study-actions">
-                <a className="btn-primary" href="https://etana-must.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Open Live Site
-                </a>
-                <a className="btn-secondary" href="#contact">
-                  Build My Store
-                </a>
-              </div>
+          <section className="case-study-stack" id="work" aria-labelledby="featured-work-title">
+            <div className="wrapper case-study-stack-intro">
+              <p className="eyebrow">Featured Work</p>
+              <h2 id="featured-work-title">One scrolling showcase. The real projects only.</h2>
+              <p>Scroll through the live work and each case study will stack over the previous one.</p>
             </div>
 
-            <div className="case-study-visual">
-              <div className="case-study-screen">
-                <Image
-                  src="/images/etana-home.png"
-                  alt="Etana e-commerce homepage screenshot"
-                  width={2048}
-                  height={1367}
-                  sizes="(max-width: 980px) 100vw, 50vw"
-                  quality={90}
-                />
-              </div>
-              <div className="case-study-float-card">
-                <p>Commerce Focus</p>
-                <strong>Designed to convert procurement traffic into repeat orders.</strong>
-              </div>
-            </div>
-          </section>
-        </ScrollAnimationWrapper>
+            <div className="case-study-stack-pin">
+              <section className="case-study wrapper case-study-stack-card" aria-labelledby="etana-case-study">
+                <div className="case-study-copy">
+                  <p className="eyebrow">Live Work</p>
+                  <h2 id="etana-case-study">Etana: e-commerce built for wholesale buyers.</h2>
+                  <p>
+                    Etana is a conversion-focused commerce platform built around trust, logistics clarity, and bulk procurement. The experience pushes strong category discovery, featured deals, product urgency, and clean checkout entry points for Kenyan buyers.
+                  </p>
+                  <div className="case-study-pills">
+                    <span>Red + white commerce identity</span>
+                    <span>Bulk order pricing UX</span>
+                    <span>Mini-cart and fast checkout flow</span>
+                    <span>Category-led navigation</span>
+                  </div>
+                  <ul className="case-study-stats">
+                    {etanaStats.map((stat) => (
+                      <li key={stat}>{stat}</li>
+                    ))}
+                  </ul>
+                  <div className="case-study-actions">
+                    <a className="btn-primary" href="https://etana-must.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      Open Live Site
+                    </a>
+                    <a className="btn-secondary" href="#contact">
+                      Build My Store
+                    </a>
+                  </div>
+                </div>
 
-        <ScrollAnimationWrapper>
-          <section className="case-study wrapper case-study--reverse" aria-labelledby="sali-case-study">
-            <div className="case-study-copy">
-              <p className="eyebrow">Live Work</p>
-              <h2 id="sali-case-study">Sali Products: an industrial e-commerce built for Kenya&apos;s trade sector.</h2>
-              <p>
-                Sali Products Kenya is a full-featured trade platform serving contractors, businesses, and DIY enthusiasts nationwide. Built with a product-first layout, fast search, wishlist, cart, and account management — all optimised for Kenyan mobile traffic.
-              </p>
-              <div className="case-study-pills">
-                <span>5,000+ product catalogue</span>
-                <span>Category & filter navigation</span>
-                <span>KES pricing & fast delivery</span>
-                <span>Cart, wishlist & accounts</span>
-              </div>
-              <ul className="case-study-stats">
-                {saliStats.map((stat) => (
-                  <li key={stat}>{stat}</li>
-                ))}
-              </ul>
-              <div className="case-study-actions">
-                <a className="btn-primary" href="https://sali-lygt.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Open Live Site
-                </a>
-                <a className="btn-secondary" href="#contact">
-                  Build My Store
-                </a>
-              </div>
-            </div>
-
-            <div className="case-study-visual">
-              <div className="case-study-screen">
-                <Image
-                  src="/images/sali-home.png"
-                  alt="Sali Products Kenya homepage screenshot"
-                  width={2048}
-                  height={1367}
-                  sizes="(max-width: 980px) 100vw, 50vw"
-                  quality={90}
-                />
-              </div>
-              <div className="case-study-float-card">
-                <p>Trade E-Commerce</p>
-                <strong>Industrial-grade catalogue with consumer-grade shopping experience.</strong>
-              </div>
-            </div>
-          </section>
-        </ScrollAnimationWrapper>
-
-        <ScrollAnimationWrapper>
-          <section className="case-study wrapper" aria-labelledby="eterna-case-study">
-            <div className="case-study-copy">
-              <p className="eyebrow">Live Work</p>
-              <h2 id="eterna-case-study">Eterna Interiors: luxury brand presence for a high-end design studio.</h2>
-              <p>
-                Eterna Interiors Hub is a premium multi-page brand website for a Nairobi-based luxury interior design firm. The site blends refined typography, portfolio showcasing, testimonials, and a consultation booking journey — all reflecting the studio&apos;s white-glove service ethos.
-              </p>
-              <div className="case-study-pills">
-                <span>Luxury visual identity</span>
-                <span>Multi-page site with CMS</span>
-                <span>Portfolio & project gallery</span>
-                <span>Consultation booking flow</span>
-              </div>
-              <ul className="case-study-stats">
-                {eternaStats.map((stat) => (
-                  <li key={stat}>{stat}</li>
-                ))}
-              </ul>
-              <div className="case-study-actions">
-                <a className="btn-primary" href="https://eternakelly.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Open Live Site
-                </a>
-                <a className="btn-secondary" href="#contact">
-                  Build My Brand Site
-                </a>
-              </div>
+                <div className="case-study-visual">
+                  <div className="case-study-screen">
+                    <Image
+                      src="/images/etana-home.png"
+                      alt="Etana e-commerce homepage screenshot"
+                      width={2048}
+                      height={1367}
+                      sizes="(max-width: 980px) 100vw, 50vw"
+                      quality={90}
+                    />
+                  </div>
+                  <div className="case-study-float-card">
+                    <p>Commerce Focus</p>
+                    <strong>Designed to convert procurement traffic into repeat orders.</strong>
+                  </div>
+                </div>
+              </section>
             </div>
 
-            <div className="case-study-visual">
-              <div className="case-study-screen">
-                <Image
-                  src="/images/eterna-home.png"
-                  alt="Eterna Interiors Hub homepage screenshot"
-                  width={2048}
-                  height={1367}
-                  sizes="(max-width: 980px) 100vw, 50vw"
-                  quality={90}
-                />
-              </div>
-              <div className="case-study-float-card">
-                <p>Luxury Brand</p>
-                <strong>Timeless design that converts premium inquiries into studio clients.</strong>
-              </div>
+            <div className="case-study-stack-pin">
+              <section className="case-study wrapper case-study--reverse case-study-stack-card" aria-labelledby="sali-case-study">
+                <div className="case-study-copy">
+                  <p className="eyebrow">Live Work</p>
+                  <h2 id="sali-case-study">Sali Products: an industrial e-commerce built for Kenya&apos;s trade sector.</h2>
+                  <p>
+                    Sali Products Kenya is a full-featured trade platform serving contractors, businesses, and DIY enthusiasts nationwide. Built with a product-first layout, fast search, wishlist, cart, and account management — all optimised for Kenyan mobile traffic.
+                  </p>
+                  <div className="case-study-pills">
+                    <span>5,000+ product catalogue</span>
+                    <span>Category & filter navigation</span>
+                    <span>KES pricing & fast delivery</span>
+                    <span>Cart, wishlist & accounts</span>
+                  </div>
+                  <ul className="case-study-stats">
+                    {saliStats.map((stat) => (
+                      <li key={stat}>{stat}</li>
+                    ))}
+                  </ul>
+                  <div className="case-study-actions">
+                    <a className="btn-primary" href="https://sali-lygt.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      Open Live Site
+                    </a>
+                    <a className="btn-secondary" href="#contact">
+                      Build My Store
+                    </a>
+                  </div>
+                </div>
+
+                <div className="case-study-visual">
+                  <div className="case-study-screen">
+                    <Image
+                      src="/images/sali-home.png"
+                      alt="Sali Products Kenya homepage screenshot"
+                      width={2048}
+                      height={1367}
+                      sizes="(max-width: 980px) 100vw, 50vw"
+                      quality={90}
+                    />
+                  </div>
+                  <div className="case-study-float-card">
+                    <p>Trade E-Commerce</p>
+                    <strong>Industrial-grade catalogue with consumer-grade shopping experience.</strong>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div className="case-study-stack-pin">
+              <section className="case-study wrapper case-study-stack-card" aria-labelledby="eterna-case-study">
+                <div className="case-study-copy">
+                  <p className="eyebrow">Live Work</p>
+                  <h2 id="eterna-case-study">Eterna Interiors: luxury brand presence for a high-end design studio.</h2>
+                  <p>
+                    Eterna Interiors Hub is a premium multi-page brand website for a Nairobi-based luxury interior design firm. The site blends refined typography, portfolio showcasing, testimonials, and a consultation booking journey — all reflecting the studio&apos;s white-glove service ethos.
+                  </p>
+                  <div className="case-study-pills">
+                    <span>Luxury visual identity</span>
+                    <span>Multi-page site with CMS</span>
+                    <span>Portfolio & project gallery</span>
+                    <span>Consultation booking flow</span>
+                  </div>
+                  <ul className="case-study-stats">
+                    {eternaStats.map((stat) => (
+                      <li key={stat}>{stat}</li>
+                    ))}
+                  </ul>
+                  <div className="case-study-actions">
+                    <a className="btn-primary" href="https://eternakelly.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      Open Live Site
+                    </a>
+                    <a className="btn-secondary" href="#contact">
+                      Build My Brand Site
+                    </a>
+                  </div>
+                </div>
+
+                <div className="case-study-visual">
+                  <div className="case-study-screen">
+                    <Image
+                      src="/images/eterna-home.png"
+                      alt="Eterna Interiors Hub homepage screenshot"
+                      width={2048}
+                      height={1367}
+                      sizes="(max-width: 980px) 100vw, 50vw"
+                      quality={90}
+                    />
+                  </div>
+                  <div className="case-study-float-card">
+                    <p>Luxury Brand</p>
+                    <strong>Timeless design that converts premium inquiries into studio clients.</strong>
+                  </div>
+                </div>
+              </section>
             </div>
           </section>
         </ScrollAnimationWrapper>
