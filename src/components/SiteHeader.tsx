@@ -44,6 +44,16 @@ const navItems = [
     ),
   },
   {
+    href: "/pricing",
+    label: "Pricing",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 7h9a3 3 0 0 1 0 6H10a3 3 0 1 0 0 6h8" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 4v16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     href: "/contact",
     label: "Contact",
     icon: (
