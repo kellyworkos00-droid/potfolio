@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Playfair_Display, DM_Sans } from "next/font/google";
+import { ScrollDepthScene } from "@/components/ScrollDepthScene";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-zachary.vercel.app";
@@ -83,7 +87,20 @@ export default function RootLayout({
       lang="en"
       className={`${headingFont.variable} ${bodyFont.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <div className="page-shell">
+          <div className="ambient-bg" aria-hidden="true" />
+          <ScrollDepthScene />
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+          <div className="mobile-quick-bar">
+            <Link href="/">Home</Link>
+            <Link href="/projects">Work</Link>
+            <Link href="/contact">Contact</Link>
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
