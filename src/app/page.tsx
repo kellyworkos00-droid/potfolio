@@ -3,6 +3,8 @@ import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
 import { ContactForm } from "@/components/ContactForm";
 import { ScrollDepthScene } from "@/components/ScrollDepthScene";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { TechLogos } from "@/components/TechLogos";
+import { StackedCards } from "@/components/StackedCards";
 
 const projects = [
   {
@@ -332,6 +334,8 @@ export default function Home() {
           </section>
         </ScrollAnimationWrapper>
 
+        <TechLogos />
+
         <ScrollAnimationWrapper>
           <section className="timeline wrapper" aria-labelledby="timeline-title">
             <div className="timeline-heading">
@@ -370,6 +374,8 @@ export default function Home() {
             </div>
           </section>
         </ScrollAnimationWrapper>
+
+        <StackedCards />
 
         <ScrollAnimationWrapper>
           <section className="crawl-wrap" aria-label="Highlights">
