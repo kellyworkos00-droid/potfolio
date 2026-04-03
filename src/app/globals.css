@@ -334,26 +334,22 @@ body {
   animation: fadeInScale 0.8s ease 0.2s both, floatImage 5s ease-in-out infinite 0.8s;
 }
 
-.portrait-stack:hover img:first-child {
-  transform: scale(1.02) translateZ(0);
-}
-
-.portrait-stack:hover img:last-child {
-  transform: rotate(-4deg) translateY(-8px);
-}
-
-.about-copy {
-  padding: 1rem;
-}
-
-.about-copy h2,
-.work h2,
-.services h2,
-.contact h2 {
+  .portrait-accent {
+   position: absolute;
+   bottom: 20px;
+   right: 20px;
+   background: linear-gradient(135deg, var(--accent), #ff6b1a);
+   padding: 0.75rem 1.2rem;
+   border-radius: 999px;
+   font-weight: 700;
+   font-size: 0.85rem;
+   box-shadow: 0 12px 30px #ff7a3a40;
+   animation: slideInUp 0.6s ease 0.5s both;
+   color: #140900;
   font-family: var(--font-playfair), serif;
   font-weight: 700;
   font-size: clamp(1.65rem, 5.5vw, 3.2rem);
-  line-height: 1.08;
+   transform: scale(1.01) translateZ(0);
   letter-spacing: -0.02em;
 }
 
@@ -667,6 +663,17 @@ body {
   }
 }
 
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Theme Toggle */
 .theme-toggle {
   background: #ffffff12;
@@ -875,6 +882,11 @@ html:not([data-theme]) .ambient-bg {
     radial-gradient(55rem 32rem at 88% 16%, #e5c06f2b, transparent 70%),
     radial-gradient(45rem 28rem at 50% 86%, #89a3ff1f, transparent 70%),
     linear-gradient(180deg, #f9f7f4, #f5f2ed);
+}
+
+html:not([data-theme]) .portrait-accent {
+  background: linear-gradient(135deg, #ff7a3a, #ff6b1a);
+  color: #f9f7f4;
 }
 
 @keyframes slideInDown {

@@ -83,18 +83,17 @@ export default function Home() {
         <section className="image-band wrapper" id="about">
           <div className="portrait-stack">
             <Image
-              src="/images/zachary-main.svg"
-              alt="Zachary Ndegwa portrait placeholder"
+                src="/images/zach.jpeg"
+                alt="Zachary Ndegwa - Web Developer & Designer"
               width={800}
               height={1000}
               priority
+                quality={85}
+                sizes="(max-width: 768px) 100vw, 60vw"
             />
-            <Image
-              src="/images/zachary-studio.svg"
-              alt="Studio profile placeholder"
-              width={520}
-              height={700}
-            />
+              <div className="portrait-accent">
+                <span>Award-Winning Designer</span>
+              </div>
           </div>
           <div className="about-copy">
             <h2>Crafted to win. Built to convert.</h2>
