@@ -12,16 +12,16 @@ const projects = [
     href: "https://etana-must.vercel.app/",
   },
   {
-    title: "Premium Brand Websites",
-    type: "Design + Development",
-    result: "Luxury visual systems, rich motion, and performance-led front-end builds",
-    href: "#contact",
+    title: "Sali Products Kenya",
+    type: "E-Commerce + Inventory Platform",
+    result: "Industrial tools & machinery store with category-led navigation, product search, and KES pricing",
+    href: "https://sali-lygt.vercel.app/",
   },
   {
-    title: "SaaS Dashboards",
-    type: "Product Design + Animation",
-    result: "Enterprise-ready interfaces with smooth flows, data hierarchy, and polished interactions",
-    href: "#contact",
+    title: "Eterna Interiors Hub",
+    type: "Luxury Brand Website",
+    result: "High-end interior design studio site with portfolio showcase, testimonials, and consultation booking",
+    href: "https://eternakelly.vercel.app/",
   },
 ];
 
@@ -37,6 +37,20 @@ const etanaStats = [
   "Same-day delivery in Nairobi",
   "500+ businesses served",
   "8 live products showcased with wholesale pricing",
+];
+
+const saliStats = [
+  "5,000+ products across tools, machines & supplies",
+  "10+ years in business",
+  "1,000+ satisfied clients across Kenya",
+  "Wishlist, cart, and account system built in",
+];
+
+const eternaStats = [
+  "500+ projects completed",
+  "15+ years design experience",
+  "98% client satisfaction rate",
+  "Full newsletter, portfolio & booking system",
 ];
 
 const storyPoints = [
@@ -436,6 +450,102 @@ export default function Home() {
               <div className="case-study-float-card">
                 <p>Commerce Focus</p>
                 <strong>Designed to convert procurement traffic into repeat orders.</strong>
+              </div>
+            </div>
+          </section>
+        </ScrollAnimationWrapper>
+
+        <ScrollAnimationWrapper>
+          <section className="case-study wrapper case-study--reverse" aria-labelledby="sali-case-study">
+            <div className="case-study-copy">
+              <p className="eyebrow">Live Work</p>
+              <h2 id="sali-case-study">Sali Products: an industrial e-commerce built for Kenya&apos;s trade sector.</h2>
+              <p>
+                Sali Products Kenya is a full-featured trade platform serving contractors, businesses, and DIY enthusiasts nationwide. Built with a product-first layout, fast search, wishlist, cart, and account management — all optimised for Kenyan mobile traffic.
+              </p>
+              <div className="case-study-pills">
+                <span>5,000+ product catalogue</span>
+                <span>Category & filter navigation</span>
+                <span>KES pricing & fast delivery</span>
+                <span>Cart, wishlist & accounts</span>
+              </div>
+              <ul className="case-study-stats">
+                {saliStats.map((stat) => (
+                  <li key={stat}>{stat}</li>
+                ))}
+              </ul>
+              <div className="case-study-actions">
+                <a className="btn-primary" href="https://sali-lygt.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  Open Live Site
+                </a>
+                <a className="btn-secondary" href="#contact">
+                  Build My Store
+                </a>
+              </div>
+            </div>
+
+            <div className="case-study-visual">
+              <div className="case-study-screen">
+                <Image
+                  src="/images/sali-home.png"
+                  alt="Sali Products Kenya homepage screenshot"
+                  width={2048}
+                  height={1367}
+                  sizes="(max-width: 980px) 100vw, 50vw"
+                  quality={90}
+                />
+              </div>
+              <div className="case-study-float-card">
+                <p>Trade E-Commerce</p>
+                <strong>Industrial-grade catalogue with consumer-grade shopping experience.</strong>
+              </div>
+            </div>
+          </section>
+        </ScrollAnimationWrapper>
+
+        <ScrollAnimationWrapper>
+          <section className="case-study wrapper" aria-labelledby="eterna-case-study">
+            <div className="case-study-copy">
+              <p className="eyebrow">Live Work</p>
+              <h2 id="eterna-case-study">Eterna Interiors: luxury brand presence for a high-end design studio.</h2>
+              <p>
+                Eterna Interiors Hub is a premium multi-page brand website for a Nairobi-based luxury interior design firm. The site blends refined typography, portfolio showcasing, testimonials, and a consultation booking journey — all reflecting the studio&apos;s white-glove service ethos.
+              </p>
+              <div className="case-study-pills">
+                <span>Luxury visual identity</span>
+                <span>Multi-page site with CMS</span>
+                <span>Portfolio & project gallery</span>
+                <span>Consultation booking flow</span>
+              </div>
+              <ul className="case-study-stats">
+                {eternaStats.map((stat) => (
+                  <li key={stat}>{stat}</li>
+                ))}
+              </ul>
+              <div className="case-study-actions">
+                <a className="btn-primary" href="https://eternakelly.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  Open Live Site
+                </a>
+                <a className="btn-secondary" href="#contact">
+                  Build My Brand Site
+                </a>
+              </div>
+            </div>
+
+            <div className="case-study-visual">
+              <div className="case-study-screen">
+                <Image
+                  src="/images/eterna-home.png"
+                  alt="Eterna Interiors Hub homepage screenshot"
+                  width={2048}
+                  height={1367}
+                  sizes="(max-width: 980px) 100vw, 50vw"
+                  quality={90}
+                />
+              </div>
+              <div className="case-study-float-card">
+                <p>Luxury Brand</p>
+                <strong>Timeless design that converts premium inquiries into studio clients.</strong>
               </div>
             </div>
           </section>

@@ -439,6 +439,14 @@ a {
   gap: 1.4rem;
 }
 
+.case-study--reverse {
+  direction: rtl;
+}
+
+.case-study--reverse > * {
+  direction: ltr;
+}
+
 .image-band {
   margin-top: 3.5rem;
 }
