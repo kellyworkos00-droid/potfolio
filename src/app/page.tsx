@@ -46,9 +46,6 @@ export default function Home() {
           <div className="hero-shell">
             <div className="hero-copy">
               <p className="kicker">Kenya • Ruiru Kamakis • Full-Stack Developer</p>
-              <h1>
-                Premium websites, e-commerce systems, and digital products with design taste and real engineering underneath.
-              </h1>
               <p className="lead">
                 I build fast, high-end web experiences for ambitious brands. Clear UX, strong conversion thinking, solid backend systems, and launch-ready execution from strategy to deployment.
               </p>
