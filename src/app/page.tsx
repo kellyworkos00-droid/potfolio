@@ -39,6 +39,13 @@ const etanaStats = [
   "8 live products showcased with wholesale pricing",
 ];
 
+const storyPoints = [
+  "Kenya-based full-stack developer working from Ruiru Kamakis",
+  "Focused on premium business websites, e-commerce platforms, and custom web systems",
+  "Blends visual design thinking with backend engineering and deployment discipline",
+  "Builds for speed, clarity, conversion, and long-term business growth",
+];
+
 const services = [
   "Award-level web design & development",
   "Next.js high-performance builds",
@@ -67,6 +74,73 @@ const stackAreas = [
     title: "Deployment & Growth",
     detail: "Vercel deployment, performance tuning, SEO, monitoring, scaling strategy, and long-term product improvement.",
   },
+];
+
+const timeline = [
+  {
+    year: "Discovery",
+    title: "Understand the business before touching the UI",
+    detail: "I map the brand, user flow, offer, and conversion path first so the design is not just attractive, but commercially sharp.",
+  },
+  {
+    year: "Design",
+    title: "Shape a premium visual and interaction system",
+    detail: "Layouts, motion, hierarchy, typography, and mobile behavior are all designed as one consistent product experience.",
+  },
+  {
+    year: "Build",
+    title: "Engineer the frontend and backend stack",
+    detail: "I build the UI, API flows, auth, CMS wiring, integrations, and performance systems needed to make the product real.",
+  },
+  {
+    year: "Launch",
+    title: "Deploy, optimize, and keep improving",
+    detail: "From Vercel deployment to SEO, analytics, and iteration, I treat launch as the start of growth, not the finish line.",
+  },
+];
+
+const skillCloud = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Node.js",
+  "REST APIs",
+  "Authentication",
+  "Database Design",
+  "Payments",
+  "E-commerce",
+  "Tailwind CSS",
+  "UI/UX Design",
+  "Motion Design",
+  "SEO",
+  "Vercel",
+  "Analytics",
+  "Responsive Systems",
+];
+
+const testimonials = [
+  {
+    quote: "Zachary combines design taste with serious technical execution. The result feels premium and performs like a real product.",
+    author: "Business Owner",
+    role: "E-commerce Founder",
+  },
+  {
+    quote: "The strongest part of working with him is that he can think through the frontend, backend, and conversion strategy in one flow.",
+    author: "Startup Team",
+    role: "Product Stakeholders",
+  },
+  {
+    quote: "Fast delivery, strong communication, and a polished finish. The experience felt like working with a studio, not just a freelancer.",
+    author: "Brand Client",
+    role: "Marketing Lead",
+  },
+];
+
+const trustStats = [
+  "Premium UI + full-stack delivery",
+  "Mobile-first execution for real-world traffic",
+  "SEO, performance, deployment, and support",
+  "Built for businesses that want to look serious online",
 ];
 
 export default function Home() {
@@ -162,6 +236,49 @@ export default function Home() {
         </section>
 
         <ScrollAnimationWrapper>
+          <section className="about-premium wrapper" aria-labelledby="about-premium-title">
+            <div className="about-premium-copy">
+              <p className="eyebrow">About Zachary</p>
+              <h2 id="about-premium-title">A premium builder for brands that need more than just a pretty website.</h2>
+              <p>
+                I work at the intersection of visual design, product thinking, and full-stack engineering. My goal is simple: build digital experiences that look expensive, feel polished, and actually help businesses grow.
+              </p>
+              <ul className="story-list">
+                {storyPoints.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="about-premium-side">
+              <div className="skills-cloud">
+                {skillCloud.map((skill) => (
+                  <span key={skill}>{skill}</span>
+                ))}
+              </div>
+            </div>
+          </section>
+        </ScrollAnimationWrapper>
+
+        <ScrollAnimationWrapper>
+          <section className="timeline wrapper" aria-labelledby="timeline-title">
+            <div className="timeline-heading">
+              <p className="eyebrow">Process</p>
+              <h2 id="timeline-title">How I take projects from concept to launch.</h2>
+            </div>
+            <div className="timeline-grid">
+              {timeline.map((item) => (
+                <article key={item.year} className="timeline-card">
+                  <span>{item.year}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        </ScrollAnimationWrapper>
+
+        <ScrollAnimationWrapper>
           <section className="fullstack wrapper" aria-labelledby="fullstack-title">
             <div className="fullstack-heading">
               <p className="eyebrow">Full-Stack Capability</p>
@@ -250,11 +367,12 @@ export default function Home() {
             <div className="case-study-visual">
               <div className="case-study-screen">
                 <Image
-                  src="/images/zachary-project.svg"
-                  alt="Etana e-commerce project showcase frame"
-                  width={1200}
-                  height={760}
+                  src="/images/etana-home.png"
+                  alt="Etana e-commerce homepage screenshot"
+                  width={2048}
+                  height={1367}
                   sizes="(max-width: 980px) 100vw, 50vw"
+                  quality={90}
                 />
               </div>
               <div className="case-study-float-card">
@@ -293,6 +411,31 @@ export default function Home() {
                 <li key={service}>{service}</li>
               ))}
             </ul>
+          </section>
+        </ScrollAnimationWrapper>
+
+        <ScrollAnimationWrapper>
+          <section className="trust wrapper" aria-labelledby="trust-title">
+            <div className="trust-heading">
+              <p className="eyebrow">Trust & Proof</p>
+              <h2 id="trust-title">Built to earn trust fast and position your brand higher.</h2>
+            </div>
+            <div className="trust-stats-grid">
+              {trustStats.map((stat) => (
+                <article key={stat} className="trust-stat-card">
+                  <p>{stat}</p>
+                </article>
+              ))}
+            </div>
+            <div className="testimonials-grid">
+              {testimonials.map((testimonial) => (
+                <article key={testimonial.quote} className="testimonial-card">
+                  <p className="testimonial-quote">&ldquo;{testimonial.quote}&rdquo;</p>
+                  <strong>{testimonial.author}</strong>
+                  <span>{testimonial.role}</span>
+                </article>
+              ))}
+            </div>
           </section>
         </ScrollAnimationWrapper>
 
