@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
 import { TechLogos } from "@/components/TechLogos";
+import { HeroRipple } from "@/components/HeroRipple";
 import { projects, services, testimonials } from "@/lib/siteData";
 
 export default function Home() {
@@ -42,7 +43,10 @@ export default function Home() {
       />
 
       <main>
-        <section className="hero wrapper">
+        <section className="hero wrapper" style={{ position: 'relative' }}>
+          <div className="hero-ripple-bg" aria-hidden="true">
+            <HeroRipple />
+          </div>
           <div className="hero-shell">
             <div className="hero-copy">
               <p className="kicker">Kenya • Ruiru Kamakis • Full-Stack Developer</p>

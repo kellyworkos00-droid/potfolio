@@ -345,6 +345,20 @@ a {
   transform: translate3d(0, calc(var(--scroll-progress) * -34px), 0);
 }
 
+.hero-ripple-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.hero-shell {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-shell {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
