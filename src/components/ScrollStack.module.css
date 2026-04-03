@@ -1,0 +1,30 @@
+.scroller {
+  position: relative;
+  height: clamp(28rem, 72vh, 52rem);
+  overflow-y: auto;
+  overflow-x: visible;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.inner {
+  position: relative;
+  padding: 0.5rem 0 5rem;
+}
+
+.card {
+  position: relative;
+  width: min(100%, 56rem);
+  margin-inline: auto;
+  will-change: transform, filter;
+  transform-origin: top center;
+  backface-visibility: hidden;
+}
+
+.end {
+  height: 45vh;
+}

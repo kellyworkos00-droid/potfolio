@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
+import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack";
 import { mobileHighlights, services, stackAreas } from "@/lib/siteData";
 
 export const metadata: Metadata = {
@@ -36,14 +37,14 @@ export default function ServicesPage() {
             <p className="eyebrow">Capability</p>
             <h2 id="services-stack-title">The technical layers I cover.</h2>
           </div>
-          <div className="stack-grid">
+          <ScrollStack itemDistance={80} itemScale={0.025} itemStackDistance={22} stackPosition="22%" scaleEndPosition="12%" baseScale={0.88}>
             {stackAreas.map((area) => (
-              <article key={area.title} className="stack-card">
+              <ScrollStackItem key={area.title} itemClassName="stack-card">
                 <h3>{area.title}</h3>
                 <p>{area.detail}</p>
-              </article>
+              </ScrollStackItem>
             ))}
-          </div>
+          </ScrollStack>
         </section>
       </ScrollAnimationWrapper>
 
