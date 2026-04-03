@@ -59,7 +59,7 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="top-nav wrapper">
+    <header className="top-nav" role="banner">
       <Link href="/" className="brand-mark-link" aria-label="Go to homepage">
         <p className="brand-mark">ZACHARY NDEGWA</p>
       </Link>
