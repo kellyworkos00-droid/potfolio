@@ -1,0 +1,13 @@
+<svg width="900" height="1100" viewBox="0 0 900 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1F2A44"/>
+      <stop offset="100%" stop-color="#C54F1B"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#g1)"/>
+  <circle cx="690" cy="280" r="210" fill="#FFFFFF20"/>
+  <circle cx="220" cy="860" r="170" fill="#FFFFFF16"/>
+  <text x="70" y="860" fill="#F8F3EA" font-family="Arial, sans-serif" font-size="56" font-weight="700">ZACHARY NDEGWA</text>
+  <text x="70" y="930" fill="#F8F3EA" font-family="Arial, sans-serif" font-size="30">Replace with your portrait photo</text>
+</svg>

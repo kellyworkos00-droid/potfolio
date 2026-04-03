@@ -1,0 +1,8 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#111827"/>
+  <rect x="80" y="80" width="1040" height="600" rx="24" fill="#1F2937" stroke="#374151"/>
+  <rect x="120" y="140" width="760" height="26" rx="12" fill="#6B7280"/>
+  <rect x="120" y="200" width="620" height="18" rx="9" fill="#4B5563"/>
+  <rect x="120" y="240" width="920" height="360" rx="20" fill="#0EA5E9" fill-opacity="0.32"/>
+  <text x="120" y="640" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="34" font-weight="700">Project Shot Placeholder</text>
+</svg>
