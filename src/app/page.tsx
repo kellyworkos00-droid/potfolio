@@ -391,6 +391,33 @@ export default function Home() {
         </ScrollAnimationWrapper>
 
         <ScrollAnimationWrapper>
+          <section className="galaxy-breakout wrapper" aria-labelledby="galaxy-breakout-title">
+            <div className="galaxy-breakout-stage">
+              <p className="eyebrow">Phase Two</p>
+              <h2 id="galaxy-breakout-title">Then the galaxy explodes and reveals the next story layer.</h2>
+              <p>
+                After the stacked cards finish, the experience shifts into a high-end 3D burst effect where light, particles, and content fragments expand outward to transition into the next section.
+              </p>
+
+              <div className="galaxy-burst-grid">
+                <article className="burst-shard">
+                  <h3>Depth Transition</h3>
+                  <p>The first content block fractures outward while preserving readability.</p>
+                </article>
+                <article className="burst-shard">
+                  <h3>3D Motion</h3>
+                  <p>Layered elements move on different axes for cinematic premium feel.</p>
+                </article>
+                <article className="burst-shard">
+                  <h3>Smooth Continuity</h3>
+                  <p>Explosion visuals guide users naturally into the next content phase.</p>
+                </article>
+              </div>
+            </div>
+          </section>
+        </ScrollAnimationWrapper>
+
+        <ScrollAnimationWrapper>
           <section className="fullstack wrapper" aria-labelledby="fullstack-title">
             <div className="fullstack-heading">
               <p className="eyebrow">Full-Stack Capability</p>
