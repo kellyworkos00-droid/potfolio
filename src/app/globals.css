@@ -266,6 +266,150 @@ a {
   transform: translate3d(0, calc(var(--scroll-progress) * -34px), 0);
 }
 
+.hero-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  align-items: start;
+  gap: 2rem;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-visual-frame {
+  position: relative;
+  padding: 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 1.35rem;
+  background:
+    radial-gradient(circle at top right, #ff7a3a1a, transparent 34%),
+    linear-gradient(165deg, #171717, #0b0b0b);
+  box-shadow: 0 26px 56px #00000040, inset 0 1px 0 #ffffff10;
+  overflow: hidden;
+}
+
+.hero-visual-frame::before {
+  content: "";
+  position: absolute;
+  inset: auto -8% -16% auto;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, #2fa7ff22, transparent 68%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.hero-visual-header,
+.hero-visual-footer {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hero-visual-header p,
+.hero-visual-footer span,
+.hero-feature-card p,
+.hero-mini-card p {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.hero-visual-header span {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  background: #ffffff08;
+}
+
+.hero-feature-card {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: linear-gradient(160deg, #111111, #101010);
+  box-shadow: 0 20px 44px #00000030;
+}
+
+.hero-feature-card h2 {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(1.3rem, 2.6vw, 2rem);
+  line-height: 1.08;
+}
+
+.hero-feature-card strong,
+.hero-mini-card strong,
+.hero-visual-footer strong {
+  display: block;
+  margin-top: 0.45rem;
+  line-height: 1.5;
+}
+
+.hero-feature-card a {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-mini-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+}
+
+.hero-mini-card {
+  padding: 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: linear-gradient(160deg, #131313, #0d0d0d);
+  box-shadow: 0 16px 34px #00000022;
+}
+
+.hero-visual-footer {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.hero-visual-footer > div {
+  flex: 1;
+}
+
+.hero-proof-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.hero-proof-strip span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #ffffff0c;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
 .kicker,
 .eyebrow {
   margin: 0;
@@ -1285,6 +1429,18 @@ html:not([data-theme]) .contact-info {
   box-shadow: 0 18px 36px #00000014, inset 0 1px 0 #ffffffb3;
 }
 
+html:not([data-theme]) .hero-visual-frame,
+html:not([data-theme]) .hero-feature-card,
+html:not([data-theme]) .hero-mini-card {
+  background: linear-gradient(165deg, #ffffff, #f3eee7);
+  box-shadow: 0 18px 36px #00000014, inset 0 1px 0 #ffffffb3;
+}
+
+html:not([data-theme]) .hero-visual-header span,
+html:not([data-theme]) .hero-proof-strip span {
+  background: #00000005;
+}
+
 html:not([data-theme]) .skills-cloud span,
 html:not([data-theme]) .timeline-card span {
   background: #00000008;
@@ -1671,6 +1827,7 @@ html:not([data-theme]) .case-study-stack-card {
 }
 
 @media (max-width: 980px) {
+  .hero-shell,
   .hero-metrics,
   .hero-grid-3d,
   .about-premium,
@@ -1689,6 +1846,14 @@ html:not([data-theme]) .case-study-stack-card {
 
   .section-head {
     align-items: start;
+    flex-direction: column;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero-visual-footer {
     flex-direction: column;
   }
 
@@ -1738,6 +1903,19 @@ html:not([data-theme]) .case-study-stack-card {
 @media (max-width: 700px) {
   .hero {
     padding-top: 5.4rem;
+  }
+
+  .hero-visual-frame {
+    padding: 0.9rem;
+  }
+
+  .hero-feature-card,
+  .hero-mini-card {
+    padding: 0.9rem;
+  }
+
+  .hero-mini-projects {
+    grid-template-columns: 1fr;
   }
 
   .top-nav {

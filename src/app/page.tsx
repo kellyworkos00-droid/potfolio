@@ -43,35 +43,86 @@ export default function Home() {
 
       <main>
         <section className="hero wrapper">
-          <p className="kicker">Kenya • Ruiru Kamakis • Full-Stack Developer</p>
-          <h1>
-            Premium websites, e-commerce systems, and digital products built with design taste and real engineering.
-          </h1>
-          <p className="lead">
-            I build fast, high-end web experiences for ambitious brands. Clear UX, strong conversion thinking, solid backend systems, and launch-ready execution.
-          </p>
+          <div className="hero-shell">
+            <div className="hero-copy">
+              <p className="kicker">Kenya • Ruiru Kamakis • Full-Stack Developer</p>
+              <h1>
+                Premium websites, e-commerce systems, and digital products with design taste and real engineering underneath.
+              </h1>
+              <p className="lead">
+                I build fast, high-end web experiences for ambitious brands. Clear UX, strong conversion thinking, solid backend systems, and launch-ready execution from strategy to deployment.
+              </p>
 
-          <div className="hero-ctas">
-            <Link href="/projects" className="btn-primary">
-              View Projects
-            </Link>
-            <Link href="/contact" className="btn-secondary">
-              Start a Project
-            </Link>
-          </div>
+              <div className="hero-ctas">
+                <Link href="/projects" className="btn-primary">
+                  View Projects
+                </Link>
+                <Link href="/contact" className="btn-secondary">
+                  Start a Project
+                </Link>
+              </div>
 
-          <div className="hero-metrics">
-            <div>
-              <span>01</span>
-              <p>Premium websites for serious brands</p>
+              <div className="hero-proof-strip" aria-label="Hero proof points">
+                <span>Next.js builds</span>
+                <span>Full-stack delivery</span>
+                <span>Performance-first</span>
+                <span>Kenya-based</span>
+              </div>
+
+              <div className="hero-metrics">
+                <div>
+                  <span>01</span>
+                  <p>Premium websites for serious brands</p>
+                </div>
+                <div>
+                  <span>02</span>
+                  <p>Full-stack delivery from UI to backend</p>
+                </div>
+                <div>
+                  <span>03</span>
+                  <p>SEO, performance, deployment, and growth support</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <span>02</span>
-              <p>Full-stack delivery from UI to backend</p>
-            </div>
-            <div>
-              <span>03</span>
-              <p>SEO, performance, deployment, and growth support</p>
+
+            <div className="hero-visual" aria-label="Selected work snapshot">
+              <div className="hero-visual-frame">
+                <div className="hero-visual-header">
+                  <p>Selected Work Snapshot</p>
+                  <span>3 live builds</span>
+                </div>
+
+                <div className="hero-feature-card">
+                  <div>
+                    <p>{projects[0].focusLabel}</p>
+                    <h2>{projects[0].title}</h2>
+                    <strong>{projects[0].focusText}</strong>
+                  </div>
+                  <a href={projects[0].href} target="_blank" rel="noopener noreferrer">
+                    Open site
+                  </a>
+                </div>
+
+                <div className="hero-mini-projects">
+                  {projects.slice(1).map((project) => (
+                    <article key={project.slug} className="hero-mini-card">
+                      <p>{project.title}</p>
+                      <strong>{project.focusLabel}</strong>
+                    </article>
+                  ))}
+                </div>
+
+                <div className="hero-visual-footer">
+                  <div>
+                    <span>Services</span>
+                    <strong>Web, e-commerce, backend, SEO</strong>
+                  </div>
+                  <div>
+                    <span>Approach</span>
+                    <strong>Design-led, conversion-aware, production-ready</strong>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
