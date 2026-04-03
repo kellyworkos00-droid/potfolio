@@ -143,6 +143,33 @@ const trustStats = [
   "Built for businesses that want to look serious online",
 ];
 
+const scrollExperience = [
+  {
+    tag: "Layer 01",
+    title: "Story-led opening with cinematic depth",
+    detail:
+      "As users scroll, the first panel locks into view to anchor attention before the next layer rises above it.",
+  },
+  {
+    tag: "Layer 02",
+    title: "Product value surfaces progressively",
+    detail:
+      "Each scroll motion reveals a new business detail, creating an intentional premium narrative instead of a flat content dump.",
+  },
+  {
+    tag: "Layer 03",
+    title: "Galaxy burst motion for emotional impact",
+    detail:
+      "Exploding nebula light and star-field movement react to scroll depth, making the mobile journey feel world-class.",
+  },
+  {
+    tag: "Layer 04",
+    title: "Clear conversion finish",
+    detail:
+      "The final layer transitions naturally into trust and contact actions so style and sales work together.",
+  },
+];
+
 export default function Home() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-zachary.vercel.app";
 
@@ -198,6 +225,11 @@ export default function Home() {
     <div className="page-shell">
       <div className="ambient-bg" aria-hidden="true" />
       <ScrollDepthScene />
+      <div className="galaxy-scroll-fx" aria-hidden="true">
+        <span className="galaxy-core" />
+        <span className="galaxy-ring" />
+        <span className="galaxy-stars" />
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
@@ -328,6 +360,28 @@ export default function Home() {
               {timeline.map((item) => (
                 <article key={item.year} className="timeline-card">
                   <span>{item.year}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        </ScrollAnimationWrapper>
+
+        <ScrollAnimationWrapper>
+          <section className="mobile-scroll-experience wrapper" aria-labelledby="mobile-scroll-title">
+            <div className="mobile-scroll-intro">
+              <p className="eyebrow">Premium Mobile Scrolling</p>
+              <h2 id="mobile-scroll-title">When users scroll, each detail rises above the previous one.</h2>
+              <p>
+                This section is tuned for high-end mobile storytelling: layered sticky cards, controlled depth, and galaxy-style visual bursts that respond to scrolling.
+              </p>
+            </div>
+
+            <div className="mobile-scroll-stack">
+              {scrollExperience.map((item) => (
+                <article key={item.tag} className="mobile-scroll-card">
+                  <span>{item.tag}</span>
                   <h3>{item.title}</h3>
                   <p>{item.detail}</p>
                 </article>
