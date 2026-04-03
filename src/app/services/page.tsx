@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FluidGlass from "@/components/FluidGlass";
+import ProfileCard from "@/components/ProfileCard";
 import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
 import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack";
 import { mobileHighlights, services, stackAreas } from "@/lib/siteData";
@@ -64,6 +66,52 @@ export default function ServicesPage() {
                 <h3>{item}</h3>
               </article>
             ))}
+          </div>
+        </section>
+      </ScrollAnimationWrapper>
+
+      <ScrollAnimationWrapper>
+        <section id="services-glass" className="wrapper services-glass" aria-labelledby="services-glass-title">
+          <div className="services-glass-heading">
+            <p className="eyebrow">Interactive Showcase</p>
+            <h2 id="services-glass-title">Glass motion built around your brand palette.</h2>
+            <p>
+              This section uses real-time WebGL motion with orange and blue accents from your design system to create a premium interaction without
+              breaking accessibility or layout flow.
+            </p>
+          </div>
+          <div className="services-glass-canvas" aria-hidden="true">
+            <FluidGlass mode="lens" lensProps={{ ior: 1.12, thickness: 4.5, chromaticAberration: 0.07 }} />
+          </div>
+        </section>
+      </ScrollAnimationWrapper>
+
+      <ScrollAnimationWrapper>
+        <section className="wrapper services-profile" aria-labelledby="services-profile-title">
+          <div className="services-profile-copy">
+            <p className="eyebrow">Lead Builder</p>
+            <h2 id="services-profile-title">A profile card with depth, glow, and tactile tilt.</h2>
+            <p>
+              Built with your site colors and animation language, this card can be reused for founder intros, team sections, and conversion-focused
+              contact blocks.
+            </p>
+          </div>
+          <div className="services-profile-card-wrap">
+            <ProfileCard
+              name="Zachary Ndegwa"
+              title="Full-Stack Engineer"
+              handle="zachary"
+              status="Available"
+              contactText="Start a Project"
+              avatarUrl="/images/zach.jpeg"
+              miniAvatarUrl="/images/zach.jpeg"
+              showUserInfo
+              enableTilt
+              enableMobileTilt={false}
+              behindGlowEnabled
+              behindGlowColor="rgba(255, 122, 58, 0.46)"
+              innerGradient="linear-gradient(145deg,#2a170ef2 0%,#2fa7ff3d 100%)"
+            />
           </div>
         </section>
       </ScrollAnimationWrapper>
