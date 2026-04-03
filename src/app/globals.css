@@ -206,12 +206,11 @@ a {
   color: inherit;
   opacity: 0.78;
   text-decoration: none;
-  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition: opacity 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .site-nav-link:hover {
   opacity: 1;
-  transform: translateY(-1px);
 }
 
 .site-nav-link.is-active {
@@ -247,7 +246,7 @@ a {
 .btn-secondary {
   position: relative;
   overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: opacity 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .theme-toggle {
@@ -263,7 +262,6 @@ a {
 }
 
 .theme-toggle:hover {
-  transform: scale(1.08) rotate(18deg);
   box-shadow: 0 8px 18px #ff7a3a26;
   border-color: #ff7a3a44;
 }
@@ -295,11 +293,10 @@ a {
   text-decoration: none;
   color: inherit;
   background: #ffffff08;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .mobile-quick-link:hover {
-  transform: translateY(-1px);
 }
 
 .mobile-quick-link.is-active {
